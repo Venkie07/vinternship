@@ -272,7 +272,7 @@ If the issue persists after trying all steps, **record the issue** and email it 
 
 **7.6 I have completed all videos and quizzes in the ViBe course, but my progress is still showing less than 100%. What should I do?**  
 
-Please do not worry. This might be a skip made in the quiz as the quiz/video item might not have been successfully completed/marked. Please verify that you've completed all the course items(1006/1006).
+Please do not worry. This might be a skip made in the quiz/video item due to penalty score as the quiz/video item might not have been successfully completed/marked. Please verify that you've completed all the course items(1006/1006). If not, Please retry the missed contents again.
 
 In the meantime, you may try the following steps once:
 

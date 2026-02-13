@@ -22,4 +22,4 @@ window.location.href = "https://sudarshansudarshan.github.io/winternship/";
 Redirecting to Founders Keepers website...
 
 ## Forms and links
-- [Telegram Channel](https://t.me/+iLEyDPEzpexlYTg1){:target="_blank"}
+<!-- - [Telegram Channel](https://t.me/+iLEyDPEzpexlYTg1){:target="_blank"} -->

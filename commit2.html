@@ -82,13 +82,13 @@ select, button {
 <div class="dashboard">
 
 <h1>Commitment Dashboard</h1>
+<p id="lastUpdated" style="text-align:center; font-size:13px; color:#666;"></p>
 
 <div class="filters">
   <select id="batchFilter">
     <option value="All">All Batches</option>
   </select>
 
-  <button onclick="refreshData()">Refresh Data</button>
 </div>
 
 <div class="cards">
@@ -135,18 +135,37 @@ select, button {
 const API_URL = "https://script.google.com/macros/s/AKfycby0YeYV4cPrKu1xHaZhnH_JCDbaW7V8emXuopSRJYXLczeunu8EKKTkYPcyCt8IpTc6/exec";
 
 let slotChart, dayChart, trendChart;
+let lastFetchTime = null;
 
 async function loadData() {
 
   const response = await fetch(API_URL);
   const data = await response.json();
 
+  lastFetchTime = new Date();
+  updateLastUpdated();
+
   populateBatchFilter(data.analytics);
   renderDashboard(data);
 }
 
+function updateLastUpdated() {
+  if (!lastFetchTime) return;
+
+  const now = new Date();
+  const diffMinutes = Math.floor((now - lastFetchTime) / 60000);
+
+  document.getElementById("lastUpdated").innerText =
+    `Last updated ${diffMinutes} min ago`;
+}
+
+setInterval(updateLastUpdated, 60000);
+
 function populateBatchFilter(data) {
   const dropdown = document.getElementById("batchFilter");
+
+  if (dropdown.options.length > 1) return; // prevent duplicates
+
   const batches = [...new Set(data.map(d => d.Batch))];
 
   batches.forEach(b => {
@@ -171,13 +190,13 @@ function renderDashboard(data) {
     ? data.slots
     : data.slots.filter(d => d.Batch === selectedBatch);
 
-  calculateKPIs(filteredAnalytics, filteredSlots);
+  calculateKPIs(filteredAnalytics, filteredSlots, selectedBatch);
   renderSlotChart(filteredSlots);
   renderDayChart(filteredAnalytics);
   renderTrendChart(filteredAnalytics);
 }
 
-function calculateKPIs(analytics, slots) {
+function calculateKPIs(analytics, slots, selectedBatch) {
 
   let totalBookings = 0;
   const batchTotals = {};
@@ -209,14 +228,30 @@ function calculateKPIs(analytics, slots) {
 
   document.getElementById("totalBookings").innerText = totalBookings;
 
-  document.getElementById("topBatch").innerText =
-    Object.keys(batchTotals).reduce((a, b) => batchTotals[a] > batchTotals[b] ? a : b);
+  if (selectedBatch === "All") {
+    document.querySelector(".cards .card:nth-child(2) h3").innerText = "Most Active Batch";
+    document.getElementById("topBatch").innerText =
+      Object.keys(batchTotals).reduce((a, b) =>
+        batchTotals[a] > batchTotals[b] ? a : b
+      );
+  } else {
+    document.querySelector(".cards .card:nth-child(2) h3").innerText = "Current Batch";
+    document.getElementById("topBatch").innerText = selectedBatch;
+  }
 
   document.getElementById("topSlot").innerText =
-    Object.keys(slotTotals).reduce((a, b) => slotTotals[a] > slotTotals[b] ? a : b);
+    Object.keys(slotTotals).length > 0
+      ? Object.keys(slotTotals).reduce((a, b) =>
+          slotTotals[a] > slotTotals[b] ? a : b
+        )
+      : "-";
 
   document.getElementById("topDay").innerText =
-    Object.keys(dayTotals).reduce((a, b) => dayTotals[a] > dayTotals[b] ? a : b);
+    Object.keys(dayTotals).length > 0
+      ? Object.keys(dayTotals).reduce((a, b) =>
+          dayTotals[a] > dayTotals[b] ? a : b
+        )
+      : "-";
 }
 
 function renderSlotChart(data) {
@@ -298,13 +333,10 @@ function renderTrendChart(data) {
   });
 }
 
-function refreshData() {
-  loadData();
-}
-
 loadData();
 
 </script>
+
 
 </body>
 </html>

@@ -99,6 +99,10 @@ select{
   margin-bottom:15px;
   color:var(--primary);
 }
+  canvas {
+  min-height: 350px;
+}
+
 </style>
 </head>
 
@@ -133,18 +137,25 @@ select{
 
 <div class="panel">
   <h2>Slot Usage (Stacked by Batch)</h2>
-  <canvas id="slotChart"></canvas>
+  <div style="height:400px">
+    <canvas id="slotChart"></canvas>
+  </div>
 </div>
 
 <div class="panel">
   <h2>Daily Bookings (Stacked by Batch)</h2>
-  <canvas id="dayChart"></canvas>
+  <div style="height:400px">
+    <canvas id="dayChart"></canvas>
+  </div>
 </div>
 
 <div class="panel">
   <h2>Daily Trend</h2>
-  <canvas id="trendChart"></canvas>
+  <div style="height:400px">
+    <canvas id="trendChart"></canvas>
+  </div>
 </div>
+
 
 </div>
 

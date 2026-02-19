@@ -36,10 +36,10 @@ The internship follows a structured timeline with specific milestones and delive
 The internship will be conducted in **online mode only**.
 
 **1.4 Are there fixed timings for live sessions?**  
-The program includes scheduled live sessions, workshops, and mentorship meetings. The timings for these sessions will be conveyed well in advance.
+The program includes scheduled live sessions, workshops, and mentorship meetings. The timings for these sessions will be conveyed well in advance. Please look into the cohort-specific dashboard for the details.
 
 **1.5 Where can I find the Internship ID?**  
-The Internship ID will be mentioned in the offer letter sent by NPTEL POC.
+The Internship ID will be mentioned in the offer letter sent by NPTEL POC (Only for the participants joined via NPTEL).
 
 **1.6 Can I preview the certificate template for non-NPTEL batches?**  
 At this time, the certificate template will not be shared prior to the start of the program, as it may vary from cohort to cohort depending on how the program is conducted. Regardless of the format, every certificate issued carries its own value and recognition.

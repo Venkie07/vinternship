@@ -1,7 +1,8 @@
 ---
 layout: cohort-page
 title: "RSAians"
-cohort_id: cohort4
+cohort_id: rsaians
+permalink: /rsaians/
 display_name: "RSAians"
 start_date: "14th Feb 2026"
 end_date: ""

@@ -1,7 +1,8 @@
 ---
 layout: cohort-page
 title: "Founders Keepers"
-cohort_id: cohort0
+cohort_id: founders-keepers
+permalink: /founders-keepers/
 display_name: "Founders Keepers"
 start_date: "22nd Dec 2025"
 end_date: "18th Jan 2026"

@@ -1,7 +1,8 @@
 ---
 layout: cohort-page
 title: "Kruskalians"
-cohort_id: cohort3
+cohort_id: kruskalians
+permalink: /kruskalians/
 display_name: "Kruskalians"
 start_date: "1st Feb 2026"
 end_date: ""

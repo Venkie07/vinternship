@@ -42,7 +42,8 @@ This experience trusted me to take ownership of my growth.
 
 And that trust changed how I show up — not just as a learner, but as a future developer.
 
-Thanks to NPTEL Sudarshan Iyengar Indian Institute of Technology, Ropar Vicharanashala (Lab for Education Design) ANNAM.AI 
+Thanks to NPTEL, Prof. Sudarshan Iyengar, Indian Institute of Technology Ropar, 
+Vicharanashala (Lab for Education Design), and ANNAM.AI.
 
 ---
 
